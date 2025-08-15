@@ -5,7 +5,7 @@ import Regras from "./containers/Regras";
 
 function extrairEquipes(sheet) {
   // Baixa Carga: A3:C9
-  const equipe1 = XLSX.utils
+  const FASTROUTE = XLSX.utils
     .sheet_to_json(sheet, { range: "A3:C9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -16,7 +16,7 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   // Média Carga: E3:G9
-  const mediaCarga = XLSX.utils
+  const MIDTRACK = XLSX.utils
     .sheet_to_json(sheet, { range: "E3:G9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -27,7 +27,7 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   // Alta Carga: I3:K9
-  const altaCarga = XLSX.utils
+  const PRIMETRANSIT = XLSX.utils
     .sheet_to_json(sheet, { range: "I3:K9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -38,9 +38,9 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   return [
-    { nome: "equipe1", centralizadoras: equipe1 },
-    { nome: "Média Carga", centralizadoras: mediaCarga },
-    { nome: "Alta Carga", centralizadoras: altaCarga },
+    { nome: <i>FAST ROUTE</i>, centralizadoras: FASTROUTE },
+    { nome: <i>MID TRACK</i>, centralizadoras: MIDTRACK },
+    { nome: <i>PRIME TRANSIT</i>, centralizadoras: PRIMETRANSIT },
   ];
 }
 
@@ -123,17 +123,18 @@ function App() {
       <footer
         style={{
           width: "100%",
-          background: "#145cac", // Cor do rodapé, troque se quiser!
-          color: "#fff",
+          background: "#eeeeeeff", // Cor do rodapé, troque se quiser!
+          color: "#145cac",
           padding: "18px 0 12px 0",
-          fontSize: "0.98rem",
-          textAlign: "right",
+          fontSize: "1.0",
+          textAlign: "center",
           marginTop: "40px",
           letterSpacing: "0.5px",
         }}
       >
         <span style={{ marginRight: 32 }}>
-          Desenvolved by: <b>Felipe Ferreira, Cauã Pivoto e Endrigo Borelli</b>
+          <b>Desenvolved by:</b>{" "}
+          <i>Felipe Ferreira, Cauã Pivotto e Endrigo Boreli</i>
         </span>
       </footer>
     </>

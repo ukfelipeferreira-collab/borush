@@ -150,7 +150,7 @@ function Home({ equipes, buildTime }) {
         style={{
           display: "flex",
           gap: "28px",
-          margin: "40px auto 0 auto",
+          margin: "10px auto 0 auto",
           justifyContent: "center",
           flexWrap: "wrap",
         }}
@@ -332,11 +332,11 @@ function Home({ equipes, buildTime }) {
 
         <h1
           style={{
-            fontSize: "2.3rem",
+            fontSize: "2.0rem",
             fontWeight: 800,
             textAlign: "center",
             color: mainTextColor,
-            marginBottom: "8px",
+            marginBottom: "2px",
             letterSpacing: "2px",
             textShadow: "0 2px 20x rgba(177, 177, 166, 1)",
           }}
