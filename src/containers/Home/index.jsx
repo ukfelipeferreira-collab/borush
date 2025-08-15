@@ -90,8 +90,8 @@ function Home({ equipes, buildTime }) {
               <span
                 key={i}
                 style={{
-                  background: "#c0c0c0ff",
-                  color: "#5e5e5eff",
+                  background: "#9e9e9eff",
+                  color: "#ffffffff",
                   padding: "4px 10px",
                   borderRadius: 8,
                   fontWeight: 500,
