@@ -109,7 +109,7 @@ function App() {
           background: "#ffffffe0",
           color: "#145cac",
           padding: "5px 0 12px 0",
-          fontSize: "0.7rem",
+          fontSize: "1.0rem",
           textAlign: "center",
           marginTop: "40px",
           letterSpacing: "0.5px",
@@ -119,7 +119,7 @@ function App() {
           <b>
             <i>Desenvolved by: </i>
           </b>
-          <i> Felipe Ferreira, Cauã Pivoto e Endrigo Borelli</i>
+          <i> Felipe Ferreira, Cauã Pivotto e Endrigo Boreli</i>
         </span>
       </footer>
     </>

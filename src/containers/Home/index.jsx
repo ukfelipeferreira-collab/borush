@@ -69,12 +69,12 @@ function Home({ equipes }) {
     return (
       <div
         style={{
-          background: "rgba(250, 245, 245, 0.08)",
+          background: "rgba(255, 0, 0, 0.08)",
           borderRadius: "18px",
           padding: "15px",
           margin: "32px 0 0 0",
-          boxShadow: "0 2px 12px rgba(80,20,100,0.25)",
-          border: isTop ? "2px solid #ecc203ff" : "2px solid #ffffffff",
+          boxShadow: "0 2px 12px rgba(196, 196, 196, 0.82)",
+          border: isTop ? "2px solid #ffffffff" : "2px solid #ffffffff",
         }}
       >
         {/* Linha com nome da equipe e centralizadoras lado a lado */}
@@ -139,7 +139,7 @@ function Home({ equipes }) {
           <button
             style={{
               marginLeft: 18,
-              background: "rgba(255, 255, 255, 0.12)",
+              background: "rgba(145, 145, 145, 0.29)",
               color: "#fff",
               border: "none",
               borderRadius: 8,
@@ -240,7 +240,7 @@ function Home({ equipes }) {
             padding: "32px",
             maxWidth: 700,
             width: "90vw",
-            boxShadow: "0 2px 24px rgba(0,0,0,0.55)",
+            boxShadow: "0 2px 24px rgba(75, 75, 75, 0.85)",
             color: "#fff",
             position: "relative",
           }}
@@ -262,7 +262,7 @@ function Home({ equipes }) {
               width: "100%",
               borderCollapse: "collapse",
               textAlign: "center",
-              background: "rgba(255,255,255,0.03)",
+              background: "rgba(0, 0, 0, 0.15)",
               borderRadius: "10px",
               overflow: "hidden",
             }}
@@ -288,8 +288,8 @@ function Home({ equipes }) {
             onClick={() => setDetalhesEquipe(null)}
             style={{
               marginTop: "22px",
-              background: "#185cac",
-              color: "#fff",
+              background: "#ffffffff",
+              color: "#145cac",
               border: "none",
               borderRadius: 8,
               padding: "8px 20px",
@@ -299,6 +299,7 @@ function Home({ equipes }) {
               display: "block",
               marginLeft: "auto",
               marginRight: "auto",
+              boxShadow: "0 2px 14px rgba(230, 227, 231, 0.67)",
             }}
           >
             Fechar
