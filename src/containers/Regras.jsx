@@ -41,28 +41,20 @@ function Regras({ onVoltar }) {
         >
           {/* COLE OU EDITE SUAS REGRAS AQUI */}
           <ol>
-            <li>
-              Garantir que a baixa de BO’s seja realizada com responsabilidade,
-              seguindo os critérios operacionais da Translovato evitando
-              encerramentos indevidos.
-            </li>
-            <li>
-              Intuito reduzir o número de BO’s em aberto por falhas operacionais
-              e promover a qualidade na tratativa, com foco na eficiência.
-            </li>
-            <li>
-              <b>Baixa procedente do BO:</b>
-            </li>
-            <li>Mercadoria Localizada</li>
-            <li>Volume Aceito pelo Destinatário</li>
-            <li>
-              Se BO foi tratado corretamente (não houve tentativa de baixa
-              indevida)
-            </li>
-            <li>
-              Processo finalizado com Parecer 29 (SOL. / AVALIACAO E BAIXA AO
-              CNO) ou 37 (SOLICITADO APROVACAO CNO).
-            </li>
+            Garantir que a baixa de BO’s seja realizada com responsabilidade,
+            seguindo os critérios operacionais da Translovato evitando
+            encerramentos indevidos. Intuito reduzir o número de BO’s em aberto
+            por falhas operacionais e promover a qualidade na tratativa, com
+            foco na eficiência.
+            <br />
+            <br />
+            <b>Baixa procedente do BO:</b>
+            <br />
+            <br />
+            Mercadoria Localizada Volume Aceito pelo Destinatário Se BO foi
+            tratado corretamente (não houve tentativa de baixa indevida)
+            Processo finalizado com Parecer 29 (SOL. / AVALIACAO E BAIXA AO CNO)
+            ou 37 (SOLICITADO APROVACAO CNO).
             {/* Adicione mais regras conforme necessário */}
           </ol>
         </div>
