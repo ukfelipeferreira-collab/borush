@@ -69,7 +69,7 @@ function Home({ equipes }) {
     return (
       <div
         style={{
-          background: "rgba(255, 0, 0, 0.08)",
+          background: "rgba(165, 165, 165, 0.1)",
           borderRadius: "18px",
           padding: "15px",
           margin: "32px 0 0 0",
