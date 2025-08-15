@@ -341,7 +341,7 @@ function Home({ equipes, buildTime }) {
             textShadow: "0 2px 20x rgba(177, 177, 166, 1)",
           }}
         >
-          PROJETO B.O RUSH
+          Desafio de Excelência
         </h1>
         <div
           style={{
