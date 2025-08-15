@@ -4,7 +4,7 @@ import Home from "./containers/Home";
 import Regras from "./containers/Regras";
 
 function extrairEquipes(sheet) {
-  const equipe1 = XLSX.utils
+  const FastRoute = XLSX.utils
     .sheet_to_json(sheet, { range: "A3:C9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -14,7 +14,7 @@ function extrairEquipes(sheet) {
     }))
     .filter((item) => item.centralizadora);
 
-  const mediaCarga = XLSX.utils
+  const MidTrack = XLSX.utils
     .sheet_to_json(sheet, { range: "E3:G9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -24,7 +24,7 @@ function extrairEquipes(sheet) {
     }))
     .filter((item) => item.centralizadora);
 
-  const altaCarga = XLSX.utils
+  const PrimeTransit = XLSX.utils
     .sheet_to_json(sheet, { range: "I3:K9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -35,9 +35,9 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   return [
-    { nome: "equipe1", centralizadoras: equipe1 },
-    { nome: "Média Carga", centralizadoras: mediaCarga },
-    { nome: "Alta Carga", centralizadoras: altaCarga },
+    { nome: "Fast Route", centralizadoras: FastRoute },
+    { nome: "Mid Track", centralizadoras: MidTrack },
+    { nome: "Prime Transit", centralizadoras: PrimeTransit },
   ];
 }
 
