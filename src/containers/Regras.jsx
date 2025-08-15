@@ -27,7 +27,7 @@ function Regras({ onVoltar }) {
             marginBottom: 24,
           }}
         >
-          REGRAS DO PROJETO
+          REGRAS DESAFIO DE EXCELÊNCIA
         </h1>
         <div
           style={{
@@ -41,20 +41,57 @@ function Regras({ onVoltar }) {
         >
           {/* COLE OU EDITE SUAS REGRAS AQUI */}
           <ol>
-            Garantir que a baixa de BO’s seja realizada com responsabilidade,
-            seguindo os critérios operacionais da Translovato evitando
-            encerramentos indevidos. Intuito reduzir o número de BO’s em aberto
-            por falhas operacionais e promover a qualidade na tratativa, com
-            foco na eficiência.
+            <b>REGRAS DO DESAFIO DE EXCELÊNCIA</b>
             <br />
             <br />
-            <b>Baixa procedente do BO:</b>
+            O objetivo principal do projeto é reduzir o número de BO’s em aberto
+            por falhas operacionais, incentivando a qualidade na tratativa e a
+            eficiência nos processos. - Todas as baixas devem ser realizadas com
+            responsabilidade, seguindo integralmente os critérios operacionais
+            da Translovato PO.OPE.011) evitando encerramentos indevidos.
             <br />
             <br />
-            Mercadoria Localizada Volume Aceito pelo Destinatário Se BO foi
-            tratado corretamente (não houve tentativa de baixa indevida)
-            Processo finalizado com Parecer 29 (SOL. / AVALIACAO E BAIXA AO CNO)
-            ou 37 (SOLICITADO APROVACAO CNO).
+            <b>✅ BAIXAS CONSIDERADAS PROCEDENTES</b>
+            <br />
+            Somente serão pontuadas as baixas que atendam a pelo menos um dos
+            critérios abaixo:
+            <br />
+            <i>* Mercadoria localizada (Parecer 7);</i>
+            <br />
+            <i>* Volume aceito pelo destinatário (Parecer 9);</i>
+            <br />
+            <i>* Tratativa correta do BO, sem tentativa de baixa indevida;</i>
+            <br />
+            <br />
+            <b>PROCESSO FINALIZADO COM UM DOS SEGUINTES PARECERES:</b>
+            <b />
+            <br /> - Parecer 29 – Solicitação/Avaliação e Baixa ao CNO;
+            <br />
+            - Parecer 37 – Solicitação de Aprovação CNO.
+            <br />
+            <br />
+            <b>PENALIDADES</b>
+            <br />
+            Para garantir a integridade do jogo, as seguintes ocorrências
+            resultarão em perda de pontos:
+            <br />
+            * Reversão de BO indevida → – 3 Pontos;
+            <br />
+            * Baixa de BO indevida → – 6 Pontos;
+            <br />
+            * Retenção intencional de BO para maior ganho de pontuação → - 10
+            Pontos.
+            <br />
+            <br />
+            Critérios de pontuação positiva
+            <br />
+            <br />
+            - BO Tratado/Baixado com mais de 15 dias em aberto → 3 pontos
+            <br />
+            - BO Tratado/Baixado entre 10 e 15 dias em aberto → 2 pontos
+            <br />
+            - BO Tratado/Baixado com até 10 dias em aberto → 1 ponto.
+            <br />
             {/* Adicione mais regras conforme necessário */}
           </ol>
         </div>
