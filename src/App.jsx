@@ -4,7 +4,8 @@ import Home from "./containers/Home";
 import Regras from "./containers/Regras";
 
 function extrairEquipes(sheet) {
-  const FastRoute = XLSX.utils
+  // Baixa Carga: A3:C9
+  const equipe1 = XLSX.utils
     .sheet_to_json(sheet, { range: "A3:C9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -14,7 +15,8 @@ function extrairEquipes(sheet) {
     }))
     .filter((item) => item.centralizadora);
 
-  const MidTrack = XLSX.utils
+  // Média Carga: E3:G9
+  const mediaCarga = XLSX.utils
     .sheet_to_json(sheet, { range: "E3:G9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -24,7 +26,8 @@ function extrairEquipes(sheet) {
     }))
     .filter((item) => item.centralizadora);
 
-  const PrimeTransit = XLSX.utils
+  // Alta Carga: I3:K9
+  const altaCarga = XLSX.utils
     .sheet_to_json(sheet, { range: "I3:K9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -35,9 +38,9 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   return [
-    { nome: "Fast Route", centralizadoras: FastRoute },
-    { nome: "Mid Track", centralizadoras: MidTrack },
-    { nome: "Prime Transit", centralizadoras: PrimeTransit },
+    { nome: "equipe1", centralizadoras: equipe1 },
+    { nome: "Média Carga", centralizadoras: mediaCarga },
+    { nome: "Alta Carga", centralizadoras: altaCarga },
   ];
 }
 
@@ -45,6 +48,7 @@ function App() {
   const [equipes, setEquipes] = useState([]);
   const [erro, setErro] = useState("");
   const [pagina, setPagina] = useState("home");
+  const [buildTime, setBuildTime] = useState("");
 
   useEffect(() => {
     fetch("/GAMESKPI.xlsx")
@@ -61,6 +65,19 @@ function App() {
         );
         console.error("Erro ao ler planilha:", err);
       });
+  }, []);
+
+  // Busca o horário do build ao carregar o app
+  useEffect(() => {
+    fetch("/build.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const dt = new Date(data.date);
+        setBuildTime(
+          dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+        );
+      })
+      .catch(() => setBuildTime(""));
   }, []);
 
   if (erro) return <div>{erro}</div>;
@@ -87,7 +104,7 @@ function App() {
             cursor: "pointer",
             fontWeight: 600,
             fontSize: 16,
-            boxShadow: "0 2px 8px rgba(247, 234, 234, 0.94)",
+            boxShadow: "0 2px 8px rgba(80,20,100,0.12)",
           }}
           onClick={() => setPagina(pagina === "home" ? "regras" : "home")}
         >
@@ -97,29 +114,26 @@ function App() {
 
       {/* Conteúdo principal */}
       {pagina === "home" ? (
-        <Home equipes={equipes} />
+        <Home equipes={equipes} buildTime={buildTime} />
       ) : (
         <Regras onVoltar={() => setPagina("home")} />
       )}
 
-      {/* Rodapé tradicional, só aparece quando rolar até o fim */}
+      {/* Rodapé tradicional */}
       <footer
         style={{
           width: "100%",
-          background: "#ffffffe0",
-          color: "#145cac",
-          padding: "5px 0 12px 0",
-          fontSize: "1.0rem",
-          textAlign: "center",
+          background: "#145cac", // Cor do rodapé, troque se quiser!
+          color: "#fff",
+          padding: "18px 0 12px 0",
+          fontSize: "0.98rem",
+          textAlign: "right",
           marginTop: "40px",
           letterSpacing: "0.5px",
         }}
       >
         <span style={{ marginRight: 32 }}>
-          <b>
-            <i>Desenvolved by: </i>
-          </b>
-          <i> Felipe Ferreira, Cauã Pivotto e Endrigo Boreli</i>
+          Desenvolved by: <b>Felipe Ferreira, Cauã Pivoto e Endrigo Borelli</b>
         </span>
       </footer>
     </>

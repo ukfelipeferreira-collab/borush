@@ -1,25 +1,14 @@
 import "../../App.css";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { FaUsers, FaBullseye, FaArrowUp, FaTrophy } from "react-icons/fa";
-// Importa as imagens
 import logo from "../../assets/logo.png";
 import borush from "../../assets/borush.png";
 
-// Função para formatar hora (hh:mm)
-function formatTime(date) {
-  return date.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-}
-
 // Aqui você pode mudar a cor de fundo principal do dashboard
 const mainBg = "linear-gradient(135deg, #145cac 0%, #145cac 60%, #185cac 100%)";
-// Aqui você pode mudar a cor dos textos principais
 const mainTextColor = "#ffffffff";
 
-function Home({ equipes }) {
-  const initialUpdateTime = useRef(formatTime(new Date()));
+function Home({ equipes, buildTime }) {
   const [detalhesEquipe, setDetalhesEquipe] = useState(null);
 
   if (!equipes || equipes.length === 0) {
@@ -77,7 +66,6 @@ function Home({ equipes }) {
           border: isTop ? "2px solid #ffffffff" : "2px solid #ffffffff",
         }}
       >
-        {/* Linha com nome da equipe e centralizadoras lado a lado */}
         <div
           style={{
             display: "flex",
@@ -87,11 +75,9 @@ function Home({ equipes }) {
           }}
         >
           {isTop ? <FaTrophy color="#ecc203ff" size={36} /> : null}
-          {/* Mostra só o nome da equipe */}
           <span style={{ fontSize: "1.2rem", fontWeight: 700, color: "#fff" }}>
             {equipe.nome}
           </span>
-          {/* Centralizadoras ao lado do nome */}
           <div
             style={{
               display: "flex",
@@ -186,7 +172,6 @@ function Home({ equipes }) {
           <div style={{ fontSize: "2rem", color: "#fff", fontWeight: 700 }}>
             {topCentralizadora.pontuacao}
           </div>
-          {/* Mostra a centralizadora da maior pontuação */}
           <span
             style={{
               display: "block",
@@ -205,7 +190,7 @@ function Home({ equipes }) {
           </span>
           <FaArrowUp size={29} style={{ color: "#fff", marginTop: 10 }} />
           <div style={{ fontSize: "2rem", color: "#fff", fontWeight: 700 }}>
-            {initialUpdateTime.current}
+            {buildTime || "--:--"}
           </div>
         </div>
       </div>
@@ -215,7 +200,7 @@ function Home({ equipes }) {
   // MODAL/POPUP DE DETALHES
   function CardDetalhesModal() {
     if (detalhesEquipe == null) return null;
-    const eq = equipesOrdenadas[detalhesEquipe]; // usa o array ordenado!
+    const eq = equipesOrdenadas[detalhesEquipe];
     return (
       <div
         style={{
@@ -230,7 +215,6 @@ function Home({ equipes }) {
           alignItems: "center",
           justifyContent: "center",
         }}
-        // Fecha o modal ao clicar fora do conteúdo
         onClick={() => setDetalhesEquipe(null)}
       >
         <div
@@ -244,7 +228,6 @@ function Home({ equipes }) {
             color: "#fff",
             position: "relative",
           }}
-          // Evita fechar ao clicar no conteúdo do modal
           onClick={(e) => e.stopPropagation()}
         >
           <h2
@@ -396,7 +379,6 @@ function Home({ equipes }) {
             fontWeight: 700,
           }}
         >
-          {/* Imagem do logo */}
           <img
             src={logo}
             alt="Logo"
