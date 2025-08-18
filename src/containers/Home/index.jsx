@@ -253,7 +253,7 @@ function Home({ equipes, buildTime }) {
             <thead>
               <tr style={{ color: mainTextColor, fontWeight: "bold" }}>
                 <th style={{ padding: "10px" }}>Centralizadora</th>
-                <th style={{ padding: "10px" }}>Pontuação do Dia</th>
+                <th style={{ padding: "10px" }}>Pontuação</th>
                 <th style={{ padding: "10px" }}>Total de BOS</th>
               </tr>
             </thead>
