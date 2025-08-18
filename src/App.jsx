@@ -27,7 +27,7 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   // Alta Carga: I3:K9
-  const SÊNIOR = XLSX.utils
+  const SENIOR = XLSX.utils
     .sheet_to_json(sheet, { range: "I3:K9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -40,7 +40,7 @@ function extrairEquipes(sheet) {
   return [
     { nome: <i>SOFT</i>, centralizadoras: SOFT },
     { nome: <i>PLENO</i>, centralizadoras: PLENO },
-    { nome: <i>SÊNIOR</i>, centralizadoras: SÊNIOR },
+    { nome: <i>SÊNIOR</i>, centralizadoras: SENIOR },
   ];
 }
 
@@ -51,7 +51,8 @@ function App() {
   const [buildTime, setBuildTime] = useState("");
 
   useEffect(() => {
-    fetch("/GAMESKPI.xlsx")
+    // Adiciona um query param para evitar cache e garantir sempre o arquivo atualizado
+    fetch(`/GAMESKPI.xlsx?v=${Date.now()}`)
       .then((res) => res.arrayBuffer())
       .then((arrayBuffer) => {
         const data = new Uint8Array(arrayBuffer);
