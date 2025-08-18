@@ -5,7 +5,7 @@ import Regras from "./containers/Regras";
 
 function extrairEquipes(sheet) {
   // Baixa Carga: A3:C9
-  const FASTROUTE = XLSX.utils
+  const SOFT = XLSX.utils
     .sheet_to_json(sheet, { range: "A3:C9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -16,7 +16,7 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   // Média Carga: E3:G9
-  const MIDTRACK = XLSX.utils
+  const PLENO = XLSX.utils
     .sheet_to_json(sheet, { range: "E3:G9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -27,7 +27,7 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   // Alta Carga: I3:K9
-  const PRIMETRANSIT = XLSX.utils
+  const SÊNIOR = XLSX.utils
     .sheet_to_json(sheet, { range: "I3:K9", header: 1 })
     .slice(1)
     .map((row) => ({
@@ -38,9 +38,9 @@ function extrairEquipes(sheet) {
     .filter((item) => item.centralizadora);
 
   return [
-    { nome: <i>FAST ROUTE</i>, centralizadoras: FASTROUTE },
-    { nome: <i>MID TRACK</i>, centralizadoras: MIDTRACK },
-    { nome: <i>PRIME TRANSIT</i>, centralizadoras: PRIMETRANSIT },
+    { nome: <i>SOFT</i>, centralizadoras: SOFT },
+    { nome: <i>PLENO</i>, centralizadoras: PLENO },
+    { nome: <i>SÊNIOR</i>, centralizadoras: SÊNIOR },
   ];
 }
 
