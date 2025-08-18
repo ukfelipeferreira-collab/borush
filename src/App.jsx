@@ -9,9 +9,9 @@ function extrairEquipes(sheet) {
     .sheet_to_json(sheet, { range: "A3:C9", header: 1 })
     .slice(1)
     .map((row) => ({
-      centralizadora: row[0] || "",
-      pontuacao: row[1] || "",
-      totalBos: row[2] || "",
+      centralizadora: row[0] ?? "",
+      pontuacao: row[1] ?? "",
+      totalBos: row[2] ?? "",
     }))
     .filter((item) => item.centralizadora);
 
@@ -20,9 +20,9 @@ function extrairEquipes(sheet) {
     .sheet_to_json(sheet, { range: "E3:G9", header: 1 })
     .slice(1)
     .map((row) => ({
-      centralizadora: row[0] || "",
-      pontuacao: row[1] || "",
-      totalBos: row[2] || "",
+      centralizadora: row[0] ?? "",
+      pontuacao: row[1] ?? "",
+      totalBos: row[2] ?? "",
     }))
     .filter((item) => item.centralizadora);
 
@@ -31,9 +31,9 @@ function extrairEquipes(sheet) {
     .sheet_to_json(sheet, { range: "I3:K9", header: 1 })
     .slice(1)
     .map((row) => ({
-      centralizadora: row[0] || "",
-      pontuacao: row[1] || "",
-      totalBos: row[2] || "",
+      centralizadora: row[0] ?? "",
+      pontuacao: row[1] ?? "",
+      totalBos: row[2] ?? "",
     }))
     .filter((item) => item.centralizadora);
 
