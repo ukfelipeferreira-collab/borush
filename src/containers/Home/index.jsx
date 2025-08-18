@@ -244,9 +244,10 @@ function Home({ equipes, buildTime }) {
             style={{
               width: "100%",
               borderCollapse: "collapse",
+              boxShadow: "0 2px 24px rgba(146, 144, 144, 0.85)",
               textAlign: "center",
-              background: "rgba(0, 0, 0, 0.15)",
-              borderRadius: "10px",
+              background: "rgba(0, 7, 48, 0.18)",
+              borderRadius: "30px",
               overflow: "hidden",
             }}
           >
@@ -260,9 +261,9 @@ function Home({ equipes, buildTime }) {
             <tbody>
               {eq.centralizadoras.map((item, i) => (
                 <tr key={i} style={{ borderBottom: "1px solid #185cac" }}>
-                  <td style={{ padding: "10px" }}>{item.centralizadora}</td>
-                  <td style={{ padding: "10px" }}>{item.pontuacao}</td>
-                  <td style={{ padding: "10px" }}>{item.totalBos}</td>
+                  <td style={{ padding: "13px" }}>{item.centralizadora}</td>
+                  <td style={{ padding: "13px" }}>{item.pontuacao}</td>
+                  <td style={{ padding: "13px" }}>{item.totalBos}</td>
                 </tr>
               ))}
             </tbody>
@@ -352,6 +353,9 @@ function Home({ equipes, buildTime }) {
           }}
         >
           Acompanhamento em tempo real das pontuações
+          <br />
+          <br />
+          <u>Atualizações 8:30h e 17:30h</u>
         </div>
         <MetricsCards />
 
