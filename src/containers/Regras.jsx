@@ -177,7 +177,8 @@ function Regras({ onVoltar }) {
               </li>
               <li>
                 <i>
-                  Retenção intencional de BO para maior ganho de pontuação →{" "}
+                  Retenção intencional de BO para maior ganho de pontuação
+                  (Segurar BO até atingir a margem maior de dias) →{" "}
                 </i>
                 <span style={{ background: "#ff0000ff" }}>
                   {" "}
