@@ -356,6 +356,10 @@ function Home({ equipes, buildTime }) {
           <br />
           <br />
           <u>Atualizações 8:30h e 17:30h</u>
+          <br />
+          <br />
+          🚨 ATENÇÃO 🚨 <br />
+          Período que está valendo nosso Game 📆 de 20/08 a 31/08
         </div>
         <MetricsCards />
 
