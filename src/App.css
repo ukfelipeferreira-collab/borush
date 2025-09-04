@@ -4,15 +4,3 @@ body {
   background: linear-gradient(135deg, #145cac 0%, #145cac 60%, #145cac 100%);
   min-height: 100vh;
 }
-
-.metric-card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 10px;
-  min-width: 180px;
-  flex: 1;
-  text-align: center;
-  box-shadow: 0 2px 14px rgb(196, 195, 195);
-  margin-bottom: 18px;
-  border: 2px solid #ffffff;
-}
