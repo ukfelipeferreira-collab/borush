@@ -1,5 +1,5 @@
 import "../../App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import borush from "../../assets/borush.png";
 import seniorImg from "../../assets/senior.jpg";
@@ -29,6 +29,23 @@ function Home() {
       popupWidth: "500px",
     },
   ];
+
+  // Fecha o modal ao pressionar ESC
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === "Escape") {
+        setImagemSelecionada(null);
+      }
+    }
+
+    if (imagemSelecionada) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [imagemSelecionada]);
 
   return (
     <div
