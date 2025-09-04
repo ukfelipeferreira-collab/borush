@@ -1,5 +1,5 @@
 import "../../App.css";
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import borush from "../../assets/borush.png";
 import seniorImg from "../../assets/senior.jpg";
@@ -10,6 +10,26 @@ const mainBg = "linear-gradient(135deg, #145cac 0%, #145cac 60%, #185cac 100%)";
 const mainTextColor = "#ffffffff";
 
 function Home() {
+  const [imagemSelecionada, setImagemSelecionada] = useState(null);
+
+  const equipes = [
+    {
+      nome: "Vencedor Equipe Sênior\nCampinas",
+      img: seniorImg,
+      popupWidth: "600px",
+    },
+    {
+      nome: "Vencedor Equipe Pleno\nGuarulhos",
+      img: plenoImg,
+      popupWidth: "400px",
+    },
+    {
+      nome: "Vencedor Equipe Soft\nFlorianópolis",
+      img: softImg,
+      popupWidth: "500px",
+    },
+  ];
+
   return (
     <div
       style={{
@@ -46,6 +66,7 @@ function Home() {
           />
         </div>
 
+        {/* TÍTULO */}
         <h1
           style={{
             fontSize: "1.0rem",
@@ -60,6 +81,7 @@ function Home() {
           Desafio de Excelência
         </h1>
 
+        {/* SUBTÍTULO */}
         <div
           style={{
             textAlign: "center",
@@ -87,21 +109,19 @@ function Home() {
             marginBottom: "80px",
           }}
         >
-          {[
-            { nome: "Vencedor Equipe Sênior\nCampinas", img: seniorImg },
-            { nome: "Vencedor Equipe Pleno\nGuarulhos", img: plenoImg },
-            { nome: "Vencedor Equipe Soft\nFlorianópolis", img: softImg },
-          ].map((equipe, idx) => (
+          {equipes.map((equipe, idx) => (
             <div key={idx} style={{ textAlign: "center", color: "#fff" }}>
               <img
                 src={equipe.img}
                 alt={equipe.nome}
+                onClick={() => setImagemSelecionada(equipe)}
                 style={{
                   width: "220px",
                   height: "220px",
                   objectFit: "cover",
                   borderRadius: "16px",
                   boxShadow: "0 2px 18px rgba(0,0,0,0.5)",
+                  cursor: "pointer",
                 }}
               />
               <h3
@@ -117,6 +137,63 @@ function Home() {
             </div>
           ))}
         </div>
+
+        {/* MODAL DE IMAGEM AMPLIADA */}
+        {imagemSelecionada && (
+          <div
+            onClick={() => setImagemSelecionada(null)}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              background: "rgba(0,0,0,0.75)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 9999,
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                position: "relative",
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+              }}
+            >
+              <img
+                src={imagemSelecionada.img}
+                alt={imagemSelecionada.nome}
+                style={{
+                  width: imagemSelecionada.popupWidth || "500px",
+                  height: "auto",
+                  borderRadius: "16px",
+                  boxShadow: "0 2px 24px rgba(255,255,255,0.3)",
+                }}
+              />
+              <button
+                onClick={() => setImagemSelecionada(null)}
+                style={{
+                  position: "absolute",
+                  top: "-40px",
+                  right: "0",
+                  background: "#fff",
+                  color: "#145cac",
+                  border: "none",
+                  borderRadius: "8px",
+                  padding: "8px 16px",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  boxShadow: "0 2px 14px rgba(230, 227, 231, 0.67)",
+                }}
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* LOGO FINAL */}
         <div
